@@ -7,12 +7,10 @@ puts "----------"
 
 class Store < ActiveRecord::Base
 
-  
-
 
   attr_accessor :name, :annual_revenue, :mens_apparel, :womens_apparel
   
-  def initialize(name, annual_revenue, mens_apparel, womens_apparel)
+  def inidtialize(name, annual_revenue, mens_apparel, womens_apparel)
 
     @name = name
     @annual_revenue = annual_revenue
