@@ -14,4 +14,27 @@ puts "----------"
 
 @store6 = Store.create(name: "Yaletown",annual_revenue: 430000 , mens_apparel: true, womens_apparel: true)
 
-puts Store.count
+puts @store4.name
+
+@mens_stores = Store.where(mens_apparel: true)
+
+# puts  " #{@mens_stores.as_json}"
+
+@mens_stores.each do |store| 
+  
+  puts "The store name is: #{store.name}"
+
+end
+
+
+puts "Number of stores in database: #{@mens_stores.length}"
+
+@womens_stores = Store.where(womens_apparel: true)
+
+@womens_stores.each do |store|
+
+  if store.annual_revenue < 1000000
+    puts  "A womens store that generates less than $1m is: #{store.name}"
+  end
+
+end
